@@ -1,0 +1,209 @@
+[gd_scene load_steps=16 format=3 uid="uid://bw6prkld60w8e"]
+
+[ext_resource type="Texture2D" uid="uid://bypr7geaxgoxo" path="res://assets/Background.png" id="1_lgl0i"]
+[ext_resource type="Texture2D" uid="uid://btulhximx4ipk" path="res://assets/TileSet-36x36.png" id="1_nigb5"]
+[ext_resource type="Script" path="res://script/lobby.gd" id="1_rdb4k"]
+[ext_resource type="Texture2D" uid="uid://3a3aq6a1loyi" path="res://assets/Bushes-16x16.png" id="2_038lk"]
+[ext_resource type="PackedScene" uid="uid://wl3spmi4pb7r" path="res://scene/player.tscn" id="2_vsy0h"]
+[ext_resource type="Texture2D" uid="uid://dwnxil6eedh7d" path="res://assets/Tree1.png" id="4_1k8ci"]
+[ext_resource type="Texture2D" uid="uid://h73jmrenw61k" path="res://assets/House1.png" id="5_gvaoh"]
+[ext_resource type="PackedScene" uid="uid://b20o2407ira2k" path="res://scene/scene_transition_animation.tscn" id="8_vm86x"]
+[ext_resource type="Script" path="res://script/high_score.gd" id="9_dgdya"]
+[ext_resource type="Script" path="res://previous_score.gd" id="10_ef7hx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5ldp"]
+texture = ExtResource("2_038lk")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+2:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dcl86"]
+sources/1 = SubResource("TileSetAtlasSource_t5ldp")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ruyg7"]
+texture = ExtResource("1_nigb5")
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dnosg"]
+sources/0 = SubResource("TileSetAtlasSource_ruyg7")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wsvst"]
+
+[node name="lobby_lvl" type="Node2D"]
+script = ExtResource("1_rdb4k")
+
+[node name="Organizer" type="StaticBody2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Organizer"]
+position = Vector2(266.5, -59.5)
+scale = Vector2(2.00789, 1.908)
+texture = ExtResource("1_lgl0i")
+
+[node name="bushtile" type="TileMap" parent="Organizer"]
+tile_set = SubResource("TileSet_dcl86")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65509, 196609, 0, -65508, 131073, 0, -65507, 196609, 0, -65511, 65537, 0, -65510, 131073, 0, -262127, 65537, 0, -196591, 65537, 1, -131055, 65537, 2, -262126, 131073, 0, -196590, 131073, 1, -131054, 131073, 2, -65518, 131073, 3, -262125, 196609, 0, -196589, 65537, 1, -131053, 196609, 2, -262123, 65537, 0, -196587, 65537, 1, -131051, 65537, 2, -262122, 131073, 0, -196586, 131073, 1, -131050, 131073, 2, -65514, 131073, 3, -262121, 196609, 0, -196585, 196609, 1, -131049, 196609, 2, -262139, 65537, 0, -196603, 65537, 1, -131067, 65537, 2, -262138, 131073, 0, -196602, 131073, 1, -131066, 131073, 2, -65530, 131073, 3, -262137, 196609, 0, -196601, 131073, 1, -131065, 131073, 1, -196606, 65537, 0, -131070, 65537, 1, -65534, 65537, 2, -196605, 131073, 0, -131069, 131073, 1, -65533, 131073, 2, 3, 131073, 3, -196604, 196609, 0, -131068, 196609, 1, -65532, 196609, 2, -262134, 65537, 0, -196598, 196609, 0, -131062, 196609, 1, -262133, 131073, 0, -196597, 131073, 1, -131061, 131073, 2, -262132, 196609, 0, -196596, 196609, 1, -131060, 196609, 2, -196600, 131073, 0, -131064, 131073, 1, -196599, 196609, 0, -131063, 196609, 1, -196588, 131073, 3, -65528, 131073, 3, -65525, 131073, 3, -65524, 131073, 3, -65517, 131073, 3, -65516, 131073, 3, -131052, 131073, 3, -65515, 131073, 3, -65513, 131073, 3)
+layer_1/name = "Layer1"
+layer_1/tile_data = PackedInt32Array(-65530, 65537, 5, -65529, 131073, 5, -131063, 131073, 5, -131062, 131073, 5, -65528, 65537, 5, -131064, 65537, 4, -65525, 196609, 5, -131061, 196609, 4, -131060, 65537, 4, -65524, 65537, 5, -131054, 196609, 4, -65518, 196609, 5, -131052, 65537, 4, -131051, 131073, 4, -131050, 196609, 4, -65516, 65537, 5, -65514, 131073, 5, -65515, 131073, 5, -65513, 196609, 4)
+
+[node name="groundTile" type="TileMap" parent="Organizer"]
+tile_set = SubResource("TileSet_dnosg")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 131072, 2, 1, 196608, 2, 2, 262144, 2, 3, 327680, 2, 4, 393216, 2, 5, 458752, 2, 8, 262144, 2, 9, 327680, 2, 10, 393216, 2, 11, 458752, 2, 12, 524288, 2, 13, 196608, 2, 14, 262144, 2, 15, 327680, 2, 16, 393216, 2, 17, 458752, 2, 18, 524288, 2, 19, 196608, 2, 20, 262144, 2, 21, 327680, 2, 22, 393216, 2, 23, 458752, 2, 24, 524288, 2, 25, 196608, 2, 26, 262144, 2, 27, 327680, 2, 28, 393216, 2, 29, 458752, 2, 30, 524288, 2, 31, 589824, 2, 65536, 131072, 3, 131072, 131072, 4, 196608, 131072, 5, 65537, 196608, 3, 131073, 196608, 4, 196609, 196608, 5, 65538, 262144, 3, 131074, 262144, 4, 196610, 262144, 5, 65539, 327680, 3, 131075, 327680, 4, 196611, 327680, 5, 65540, 393216, 3, 131076, 393216, 4, 196612, 393216, 5, 65541, 458752, 3, 131077, 458752, 4, 196613, 458752, 5, 65542, 524288, 3, 131078, 524288, 4, 196614, 524288, 5, 65543, 196608, 3, 131079, 196608, 4, 196615, 196608, 5, 65544, 262144, 3, 131080, 262144, 4, 196616, 262144, 5, 65545, 327680, 3, 131081, 327680, 4, 196617, 327680, 5, 65546, 393216, 3, 131082, 393216, 4, 196618, 393216, 5, 65547, 458752, 3, 131083, 458752, 4, 196619, 458752, 5, 65548, 524288, 3, 131084, 524288, 4, 196620, 524288, 5, 65549, 196608, 3, 131085, 196608, 4, 196621, 196608, 5, 65550, 262144, 3, 131086, 262144, 4, 196622, 262144, 5, 65551, 327680, 3, 131087, 327680, 4, 196623, 327680, 5, 65552, 393216, 3, 131088, 393216, 4, 196624, 393216, 5, 65553, 458752, 3, 131089, 458752, 4, 196625, 458752, 5, 65554, 524288, 3, 131090, 524288, 4, 196626, 524288, 5, 65555, 196608, 3, 131091, 196608, 4, 196627, 196608, 5, 65556, 262144, 3, 131092, 262144, 4, 196628, 262144, 5, 65557, 327680, 3, 131093, 327680, 4, 196629, 327680, 5, 65558, 393216, 3, 131094, 393216, 4, 196630, 393216, 5, 65559, 458752, 3, 131095, 458752, 4, 196631, 458752, 5, 65560, 524288, 3, 131096, 524288, 4, 196632, 524288, 5, 65561, 196608, 3, 131097, 196608, 4, 196633, 196608, 5, 65562, 262144, 3, 131098, 262144, 4, 196634, 262144, 5, 65563, 327680, 3, 131099, 327680, 4, 196635, 327680, 5, 65564, 393216, 3, 131100, 393216, 4, 196636, 393216, 5, 65565, 458752, 3, 131101, 458752, 4, 196637, 458752, 5, 65566, 524288, 3, 131102, 524288, 4, 196638, 524288, 5, 65567, 589824, 3, 131103, 589824, 4, 196639, 589824, 5, -131042, 655360, 2, -65506, 655360, 3, -131041, 720896, 2, -65505, 720896, 3, -131045, 786432, 2, -65509, 786432, 3, -131044, 851968, 2, -65508, 851968, 3, -131068, 786432, 2, -65532, 786432, 3, -131067, 851968, 2, -65531, 851968, 3, -131063, 655360, 2, -65527, 655360, 3, -131062, 720896, 2, -65526, 720896, 3, 7, 196608, 2, 6, 524288, 2, -65530, 655360, 2, -65529, 720896, 2, -65524, 655360, 4, -65523, 720896, 4, -65522, 786432, 4, -65521, 851968, 4, -65515, 655360, 4, -65514, 720896, 4, -65513, 786432, 4, -65512, 851968, 4)
+
+[node name="Tree1" type="Sprite2D" parent="Organizer"]
+position = Vector2(173, -48)
+texture = ExtResource("4_1k8ci")
+
+[node name="House1" type="Sprite2D" parent="Organizer"]
+position = Vector2(246, -82)
+texture = ExtResource("5_gvaoh")
+
+[node name="Tree2" type="Sprite2D" parent="Organizer"]
+position = Vector2(310, -45)
+texture = ExtResource("4_1k8ci")
+
+[node name="collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
+polygon = PackedVector2Array(2, 1, 8, 5, 509, 6, 510, 63, 512, 113, 631, 114, 629, -99, 627, -218, 624, -254, 716, -249, 735, 161, 93, 162, -7, 159, 5, 57, 2, 12, -41, 15, -51, -151, -45, -236, 9, -248, 6, -57)
+
+[node name="player" parent="." instance=ExtResource("2_vsy0h")]
+position = Vector2(33, -35)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(255, -102)
+zoom = Vector2(2, 2)
+
+[node name="enterCombact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enterCombact"]
+position = Vector2(548, 36)
+shape = SubResource("WorldBoundaryShape2D_wsvst")
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("8_vm86x")]
+
+[node name="lobbyscoresystem" type="StaticBody2D" parent="."]
+
+[node name="high_score" type="RichTextLabel" parent="lobbyscoresystem"]
+offset_left = 325.0
+offset_top = -141.0
+offset_right = 489.0
+offset_bottom = -101.0
+text = "HIGH SCORE: 9999"
+script = ExtResource("9_dgdya")
+
+[node name="previous_score" type="RichTextLabel" parent="lobbyscoresystem"]
+offset_left = 290.0
+offset_top = -123.0
+offset_right = 477.0
+offset_bottom = -90.0
+text = "PREVIOUS SCORE: 9999
+"
+script = ExtResource("10_ef7hx")
+
+[connection signal="body_entered" from="enterCombact" to="." method="_on_enter_combact_body_entered"]
