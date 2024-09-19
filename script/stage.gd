@@ -33,7 +33,7 @@ func proceed_to_next_wave():
 		sceneTransitionAnim.play("in_between")
 		await get_tree().create_timer(1).timeout
 		prepare_spawn("bat",4.0,4.0)
-		prepare_spawn("frog",1.5,2.0)
+		prepare_spawn("frog",2.0,2.0)
 
 
 func prepare_spawn(type,multiplier,mob_spawn):

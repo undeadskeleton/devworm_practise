@@ -339,10 +339,6 @@ script = ExtResource("9_iwt7a")
 [node name="RUN" type="Node" parent="State_Machine"]
 script = ExtResource("9_7uwya")
 
-[node name="ATTACK" type="Node" parent="State_Machine"]
-
-[node name="DEATH" type="Node" parent="State_Machine"]
-
 [node name="ROAMING" type="Node" parent="State_Machine"]
 script = ExtResource("12_55a7a")
 
