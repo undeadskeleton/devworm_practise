@@ -295,7 +295,7 @@ script = ExtResource("1_xjtmi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kn7gk")
-animation = &"ideal"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
@@ -352,7 +352,6 @@ offset_right = 27.0
 offset_bottom = -10.0
 text = "STATES"
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="State_Machine/ROAMING" method="_on_timer_timeout"]
 [connection signal="area_entered" from="frogHitBox" to="." method="_on_frog_hit_box_area_entered"]
 [connection signal="area_entered" from="frogDamageZone" to="." method="_on_frog_damage_zone_area_entered"]

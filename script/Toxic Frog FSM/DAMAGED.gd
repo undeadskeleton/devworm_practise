@@ -6,6 +6,7 @@ func enter():
 
 
 func update(delta):
+	print("is taking damage :" , Frog.is_taking_damage)
 	if !Frog.dead and Frog.is_chasing and !Frog.is_taking_damage:
 		return STATE.RUN
 	return null

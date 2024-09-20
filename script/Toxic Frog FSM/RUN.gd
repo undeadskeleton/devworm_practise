@@ -6,7 +6,7 @@ func enter():
 
 
 func update(delta):
-	chase()
+	print("is chasing :" , Frog.is_chasing)
 	frog_movement()
 	if !Frog.dead and Frog.is_taking_damage:
 		return STATE.DAMAGED

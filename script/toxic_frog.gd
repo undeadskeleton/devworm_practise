@@ -55,6 +55,11 @@ func _ready() -> void:
 	current_state = state_machine.IDLE
 	
 func _process(delta: float) -> void:
+	if Global.playerAlive:
+		is_chasing = true
+	elif !Global.playerAlive:
+		is_chasing = false
+		
 	gravity(delta)    
 	change_state(current_state.update(delta))
 	$current_state.text = str(current_state.get_name())
@@ -68,8 +73,10 @@ func gravity(delta):
 
 func change_state(input_state):
 	if input_state != null:
+		previous_state = current_state
+		current_state = input_state
 		previous_state.exit()
-		current_state.enter
+		current_state.enter()
 
 
 func move(delta):
@@ -134,14 +141,7 @@ func toggle_damage_zone(wait_time):
 	await get_tree().create_timer(wait_time).timeout
 	damage_zone.disabled = true
 
-func chose(array):
-	array.shuffle()
-	return array.front()
 
-func _on_timer_timeout() -> void:
-	$Timer.wait_time = chose([1,1.5,2])
-	dir = chose([Vector2.RIGHT,Vector2.LEFT])
-	velocity.x = 0
 
 func _on_frog_hit_box_area_entered(area: Area2D) -> void:
 	if area == Global.playerDamageZone:

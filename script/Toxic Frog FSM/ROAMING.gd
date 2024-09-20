@@ -6,7 +6,7 @@ func enter():
 
 
 func update(delta):
-	chase()
+	print("is raoming :" , !Frog.is_chasing)
 	frog_movement()
 	if Frog.velocity.x == 0:
 		return STATE.IDLE
