@@ -1,5 +1,5 @@
 extends ProgressBar
-
+"""
 var parent
 var max_health
 var min_health
@@ -18,3 +18,4 @@ func _process(delta: float) -> void:
 			self.visible = false
 	else:
 		self.visible = false
+"""

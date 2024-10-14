@@ -66,7 +66,7 @@ func spawn_type(type,mob_wait_time,mob_spawn_round):
 				add_child(bat3)
 				add_child(bat4)
 				mob_spawn_round -=1
-				await get_tree().create_timer(3.5).timeout
+				await get_tree().create_timer(mob_wait_time).timeout
 	elif type == "frog":
 		var frogspawnpoint1 = $frogspawnpoint
 		var frogspawnpoint2 = $frogspawnpoint2
@@ -81,7 +81,7 @@ func spawn_type(type,mob_wait_time,mob_spawn_round):
 				add_child(frog1)
 				add_child(frog2)
 				mob_spawn_round -=1
-				await get_tree().create_timer(4.5).timeout
+				await get_tree().create_timer(mob_wait_time).timeout
 	wave_spawn_ended = true
 
 func update_score():

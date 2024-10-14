@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://script/stage.gd" id="1_kwljp"]
 [ext_resource type="Texture2D" uid="uid://btulhximx4ipk" path="res://assets/TileSet-36x36.png" id="2_dudfp"]
 [ext_resource type="Texture2D" uid="uid://bypr7geaxgoxo" path="res://assets/Background.png" id="2_we4xe"]
+[ext_resource type="PackedScene" uid="uid://cp0moj4tq1wl2" path="res://scene/toxic_frog_statemachine.tscn" id="3_3chve"]
 [ext_resource type="PackedScene" uid="uid://wl3spmi4pb7r" path="res://scene/player.tscn" id="3_a5pra"]
 [ext_resource type="PackedScene" uid="uid://4rusnto7ieai" path="res://scene/batenemy.tscn" id="5_e0xvv"]
 [ext_resource type="PackedScene" uid="uid://b20o2407ira2k" path="res://scene/scene_transition_animation.tscn" id="6_pcb0q"]
-[ext_resource type="PackedScene" uid="uid://d2wpa73axbit1" path="res://scene/toxic_frog.tscn" id="7_wouiy"]
 [ext_resource type="Script" path="res://script/current_score.gd" id="8_y1qv3"]
 [ext_resource type="Script" path="res://script/current_wave.gd" id="9_1cex7"]
 
@@ -57,7 +57,7 @@ size = Vector2(101.5, 691)
 [node name="stage" type="Node2D"]
 script = ExtResource("1_kwljp")
 bat_scene = ExtResource("5_e0xvv")
-frog_scene = ExtResource("7_wouiy")
+frog_scene = ExtResource("3_3chve")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(991.5, 136)

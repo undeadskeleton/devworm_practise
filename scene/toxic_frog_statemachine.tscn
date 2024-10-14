@@ -1,153 +1,153 @@
-[gd_scene load_steps=53 format=3 uid="uid://d2wpa73axbit1"]
+[gd_scene load_steps=53 format=3 uid="uid://cp0moj4tq1wl2"]
 
-[ext_resource type="Texture2D" uid="uid://dxlpayji7a2qa" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Attack.png" id="1_te6rt"]
-[ext_resource type="Script" path="res://script/toxic_frog.gd" id="1_xjtmi"]
-[ext_resource type="Texture2D" uid="uid://ca3oht6ceay8v" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Explosion.png" id="2_4hbp5"]
-[ext_resource type="Texture2D" uid="uid://d3rlq4dvw1itk" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Hurt.png" id="3_npnfj"]
-[ext_resource type="Texture2D" uid="uid://dhi4wb0vamgjk" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Idle.png" id="4_dtran"]
-[ext_resource type="Texture2D" uid="uid://dfer60vbml3f0" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Hop.png" id="5_d2ym0"]
-[ext_resource type="PackedScene" uid="uid://crrds7w50h2tu" path="res://scene/health_bar.tscn" id="7_bm1xf"]
-[ext_resource type="Script" path="res://script/Toxic Frog FSM/state_machine.gd" id="8_ao4bb"]
-[ext_resource type="Script" path="res://script/Toxic Frog FSM/RUN.gd" id="9_7uwya"]
-[ext_resource type="Script" path="res://script/Toxic Frog FSM/IDLE.gd" id="9_iwt7a"]
-[ext_resource type="Script" path="res://script/Toxic Frog FSM/ROAMING.gd" id="12_55a7a"]
-[ext_resource type="Script" path="res://script/Toxic Frog FSM/DAMAGED.gd" id="12_xnknm"]
-[ext_resource type="Script" path="res://script/Toxic Frog FSM/DEATH.gd" id="13_mllxx"]
+[ext_resource type="Script" path="res://script/toxic_frog.gd" id="1_5a75w"]
+[ext_resource type="Texture2D" uid="uid://dxlpayji7a2qa" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Attack.png" id="2_i37sq"]
+[ext_resource type="Texture2D" uid="uid://ca3oht6ceay8v" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Explosion.png" id="3_205og"]
+[ext_resource type="Texture2D" uid="uid://d3rlq4dvw1itk" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Hurt.png" id="4_mgs42"]
+[ext_resource type="Texture2D" uid="uid://dhi4wb0vamgjk" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Idle.png" id="5_dte3w"]
+[ext_resource type="Texture2D" uid="uid://dfer60vbml3f0" path="res://assets/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Hop.png" id="6_mglpk"]
+[ext_resource type="PackedScene" uid="uid://crrds7w50h2tu" path="res://scene/health_bar.tscn" id="7_bmvrh"]
+[ext_resource type="Script" path="res://script/Toxic Frog FSM/state_machine.gd" id="8_wmlwu"]
+[ext_resource type="Script" path="res://script/frogstatemachine/idle.gd" id="9_wbqs1"]
+[ext_resource type="Script" path="res://script/frogstatemachine/run.gd" id="10_c4c1n"]
+[ext_resource type="Script" path="res://script/frogstatemachine/roaming.gd" id="11_dl4fy"]
+[ext_resource type="Script" path="res://script/frogstatemachine/damaged.gd" id="12_svhol"]
+[ext_resource type="Script" path="res://script/frogstatemachine/death.gd" id="13_t8ijy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hw300"]
-atlas = ExtResource("1_te6rt")
+atlas = ExtResource("2_i37sq")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h0k8"]
-atlas = ExtResource("1_te6rt")
+atlas = ExtResource("2_i37sq")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u36v0"]
-atlas = ExtResource("1_te6rt")
+atlas = ExtResource("2_i37sq")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgq81"]
-atlas = ExtResource("1_te6rt")
+atlas = ExtResource("2_i37sq")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0ioq"]
-atlas = ExtResource("1_te6rt")
+atlas = ExtResource("2_i37sq")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajb7x"]
-atlas = ExtResource("1_te6rt")
+atlas = ExtResource("2_i37sq")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_plnxu"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_shink"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbkth"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epu13"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wdgbc"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rheqi"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6ncr"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(288, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1alb"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_422rn"]
-atlas = ExtResource("2_4hbp5")
+atlas = ExtResource("3_205og")
 region = Rect2(384, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0iitd"]
-atlas = ExtResource("3_npnfj")
+atlas = ExtResource("4_mgs42")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55srk"]
-atlas = ExtResource("3_npnfj")
+atlas = ExtResource("4_mgs42")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njvln"]
-atlas = ExtResource("3_npnfj")
+atlas = ExtResource("4_mgs42")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68rjb"]
-atlas = ExtResource("3_npnfj")
+atlas = ExtResource("4_mgs42")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sf84t"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vvpp6"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkiy2"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ka8io"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sp13o"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0j4ua"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8e30b"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(288, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fuqm6"]
-atlas = ExtResource("4_dtran")
+atlas = ExtResource("5_dte3w")
 region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aybft"]
-atlas = ExtResource("5_d2ym0")
+atlas = ExtResource("6_mglpk")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v06gq"]
-atlas = ExtResource("5_d2ym0")
+atlas = ExtResource("6_mglpk")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecgj5"]
-atlas = ExtResource("5_d2ym0")
+atlas = ExtResource("6_mglpk")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itsqn"]
-atlas = ExtResource("5_d2ym0")
+atlas = ExtResource("6_mglpk")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s14it"]
-atlas = ExtResource("5_d2ym0")
+atlas = ExtResource("6_mglpk")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7cpuw"]
-atlas = ExtResource("5_d2ym0")
+atlas = ExtResource("6_mglpk")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v8fko"]
-atlas = ExtResource("5_d2ym0")
+atlas = ExtResource("6_mglpk")
 region = Rect2(288, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kn7gk"]
@@ -291,12 +291,14 @@ radius = 21.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_iib6r"]
 radius = 3.0
 
-[node name="toxicFrog" type="CharacterBody2D"]
-script = ExtResource("1_xjtmi")
+[node name="toxicFrog_statemachine" type="CharacterBody2D" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_5a75w")
+initial_state = NodePath("State_Machine/IDLE")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kn7gk")
-animation = &"run"
+animation = &"idle"
+frame_progress = 0.717353
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
@@ -325,29 +327,32 @@ position = Vector2(23, -2)
 shape = SubResource("CircleShape2D_iib6r")
 disabled = true
 
-[node name="HealthBar" parent="." instance=ExtResource("7_bm1xf")]
-offset_left = -17.0
-offset_top = 11.0
-offset_right = 13.0
-offset_bottom = 20.0
+[node name="HealthBar" parent="." instance=ExtResource("7_bmvrh")]
+offset_left = -15.0
+offset_top = 19.0
+offset_right = 15.0
+offset_bottom = 42.0
+show_percentage = false
 
 [node name="State_Machine" type="Node" parent="."]
-script = ExtResource("8_ao4bb")
+script = ExtResource("8_wmlwu")
 
 [node name="IDLE" type="Node" parent="State_Machine"]
-script = ExtResource("9_iwt7a")
-
-[node name="RUN" type="Node" parent="State_Machine"]
-script = ExtResource("9_7uwya")
+script = ExtResource("9_wbqs1")
 
 [node name="ROAMING" type="Node" parent="State_Machine"]
-script = ExtResource("12_55a7a")
+script = ExtResource("11_dl4fy")
+
+[node name="randomdirtimer" type="Timer" parent="State_Machine/ROAMING"]
+
+[node name="RUN" type="Node" parent="State_Machine"]
+script = ExtResource("10_c4c1n")
 
 [node name="DAMAGED" type="Node" parent="State_Machine"]
-script = ExtResource("12_xnknm")
+script = ExtResource("12_svhol")
 
 [node name="DEATH" type="Node" parent="State_Machine"]
-script = ExtResource("13_mllxx")
+script = ExtResource("13_t8ijy")
 
 [node name="current_state" type="Label" parent="."]
 offset_left = -29.0
@@ -361,3 +366,4 @@ text = "STATES"
 [connection signal="area_entered" from="frogHitBox" to="State_Machine/DAMAGED" method="_on_frog_hit_box_area_entered"]
 [connection signal="area_entered" from="frogDamageZone" to="." method="_on_frog_damage_zone_area_entered"]
 [connection signal="area_entered" from="frogDamageZone" to="State_Machine/DAMAGED" method="_on_frog_damage_zone_area_entered"]
+[connection signal="timeout" from="State_Machine/ROAMING/randomdirtimer" to="State_Machine/ROAMING" method="_on_randomdirtimer_timeout"]

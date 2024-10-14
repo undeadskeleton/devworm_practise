@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw6prkld60w8e"]
+[gd_scene load_steps=17 format=3 uid="uid://bw6prkld60w8e"]
 
 [ext_resource type="Texture2D" uid="uid://bypr7geaxgoxo" path="res://assets/Background.png" id="1_lgl0i"]
 [ext_resource type="Texture2D" uid="uid://btulhximx4ipk" path="res://assets/TileSet-36x36.png" id="1_nigb5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b20o2407ira2k" path="res://scene/scene_transition_animation.tscn" id="8_vm86x"]
 [ext_resource type="Script" path="res://script/high_score.gd" id="9_dgdya"]
 [ext_resource type="Script" path="res://previous_score.gd" id="10_ef7hx"]
+[ext_resource type="PackedScene" uid="uid://2gr6jeq8rh7v" path="res://scene/player_2.tscn" id="11_eji8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5ldp"]
 texture = ExtResource("2_038lk")
@@ -173,6 +174,7 @@ texture = ExtResource("4_1k8ci")
 polygon = PackedVector2Array(2, 1, 8, 5, 509, 6, 510, 63, 512, 113, 631, 114, 629, -99, 627, -218, 624, -254, 716, -249, 735, 161, 93, 162, -7, 159, 5, 57, 2, 12, -41, 15, -51, -151, -45, -236, 9, -248, 6, -57)
 
 [node name="player" parent="." instance=ExtResource("2_vsy0h")]
+visible = false
 position = Vector2(33, -35)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -205,5 +207,8 @@ offset_bottom = -90.0
 text = "PREVIOUS SCORE: 9999
 "
 script = ExtResource("10_ef7hx")
+
+[node name="player2" parent="." instance=ExtResource("11_eji8k")]
+position = Vector2(48, -20)
 
 [connection signal="body_entered" from="enterCombact" to="." method="_on_enter_combact_body_entered"]

@@ -77,10 +77,10 @@ func check_hitbox():
 	if is_allowed_to_take_damage:
 		take_damage(damage)
 
-func take_damage(damage):
-	if damage != 0: 
+func take_damage(dmg):
+	if dmg != 0: 
 		if health > 0:
-			health -= damage
+			health -= dmg
 			print(self,health)
 			if health <= 0:
 				health = 0

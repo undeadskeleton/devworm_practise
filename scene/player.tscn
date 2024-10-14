@@ -473,9 +473,10 @@ limit_right = 1889
 limit_bottom = 374
 
 [node name="playerdamagezone" type="Area2D" parent="."]
+position = Vector2(2, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerdamagezone"]
-position = Vector2(13, 1)
+position = Vector2(11, 1)
 shape = SubResource("CircleShape2D_d8ywn")
 disabled = true
 
